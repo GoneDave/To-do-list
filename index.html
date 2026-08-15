@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do-list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="frame">
+
+        <form action="">
+            <div class="title">
+                <div class="title-left">
+                    <img src="Asset/target.png" alt="target" class="logo">
+                    <h2>To-do list</h2>
+                </div>
+                <div class="title-right">
+                    <p>
+                        <span id="is-completed">0</span>/
+                        <span id="is-defin">0</span> terminées
+                    </p>
+                </div>
+            </div>
+            <div class="submitform">
+                <input required type="text" name="action" id="actiontext" placeholder="Ajouter une tâche...">
+                <button class="btn" id="Add">
+                    <span>+</span>
+                </button>
+            </div>
+        </form>
+        <div class="btn-group actionbutton" filter role="group">
+            <button class="btn active toutes" data-filter="all">Toutes</button>
+            <button class="btn afaire" data-filter="todo">A faire</button>
+            <button class="btn fait" data-filter="done">Faites</button>
+        </div>
+
+        <main id="actionlist">
+            <span id="text-start">Aucune tâche. Ajoute ta première mission</span>
+        </main>
+
+    </section>
+    
+    <footer>
+        <p><small>&copy; 2026 KDDN. Tous droits réservés</small></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

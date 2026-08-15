@@ -1,0 +1,258 @@
+:root {
+    --primary-color: gold;
+    --black: #0f0f0f;
+    --border: #2e2925;
+    --color-white-title: #f0f0f0;
+    --color-white-text: #bebebe;
+    --h2: 15px;
+    --logo: 25px;
+    --size-text: 13px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 200ms;
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+
+body{
+    margin-bottom: 50px;
+}
+
+.frame {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 700px;
+    background-color: var(--black);
+    border-radius: 20px;
+    border: 2px solid var(--border);
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title>.title-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    color: var(--color-white-title);
+    font-size: var(--h2);
+}
+
+.title>.title-left>.logo {
+    width: var(--logo);
+}
+
+.title>.title-right>p {
+    font-size: var(--text);
+    color: var(--color-white-text);
+    font-size: var(--size-text);
+}
+
+.submitform {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+    gap: 5px;
+}
+
+.submitform input {
+    outline: none;
+    width: 90%;
+    color: var(--color-white-text);
+    padding: 10px;
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    background-color: var(--border);
+}
+
+.submitform input::placeholder {
+    color: var(--color-white-text);
+}
+
+.submitform input:focus {
+    color: var(--color-white-title);
+    border-color: var(--primary-color);
+}
+
+.submitform .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 10%;
+    background-color: var(--primary-color);
+    color: var(--border);
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.submitform .btn:hover {
+    transform: scale(1.1);
+}
+
+.actionbutton {
+    display: flex;
+    flex-direction: row;
+    /*keyframes 100%*/
+    width: 50%;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.actionbutton .btn {
+    width: 33%;
+    padding: 10px;
+    border: 2px solid var(--border);
+    color: var(--color-white-text);
+    background-color: var(--black);
+}
+
+.actionbutton .btn:hover {
+    background-color: var(--primary-color);
+    color: var(--border);
+}
+
+.actionbutton>.btn:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.actionbutton>.btn:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.actionbutton .active {
+    background-color: var(--primary-color);
+    color: var(--border);
+    font-weight: bold;
+}
+
+#actionlist {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 5px;
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--black);
+    border: 2px solid var(--border);
+}
+
+/*Definition du nouvel model de check*/
+input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked::before {
+    content: "♦";
+    color: var(--border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.action .text {
+    width: 80%;
+    color: var(--color-white-text);
+    text-transform: capitalize;
+}
+
+.action .del {
+    width: 9%;
+    height: 30px;
+    background-color: red;
+    color: #fff;
+    border: 2px solid red;
+    border-radius: 7px;
+}
+
+.action .del:hover {
+    font-weight: bold;
+}
+
+.hide-completed .is-completed,
+.hide-todo .action:not(.is-completed) {
+    display: none !important;
+}
+
+#text-start {
+    color: var(--color-white-text);
+    width: 100%;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: var(--black);
+    position: absolute;
+    position: fixed;
+    bottom: 0;
+}
+
+@media screen and (max-width: 680px) {
+    body {
+        background-color: var(--black);
+    }
+
+    .frame {
+        margin-top: 0;
+        width: 100%;
+        border-radius: 0;
+        height: 100vh;
+        margin: 0;
+        border-color: var(--black);
+    }
+
+    .actionbutton {
+        width: 100%;
+    }
+
+    footer {
+        color: var(--color-white-text);
+        background-color: var(--black);
+    }
+}
